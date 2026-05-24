@@ -1,0 +1,948 @@
+/* --- 1. Typography & Theme Variables (LUXURY EDITORIAL THEME) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* Loading your custom Madison Sauvage Font from the src folder */
+@font-face {
+  font-family: 'Madison Sauvage Script';
+  src: url('./madison.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-color: #0a0a0a; /* Deepest, rich charcoal black */
+  --text-main: #f5f5f5; 
+  --text-muted: #b8b8b8; /* Brighter silver-grey for high visibility */
+  
+  /* Highly professional, elegant metallic colors */
+  --primary-accent: #cca785; /* Champagne Bronze */
+  --primary-accent-hover: #b58c67; 
+  --secondary-accent: #e6d3c1; /* Luminous Pearl */
+  
+  /* Professional Success Green for Prize Pools */
+  --success-green: #4ade80; /* Teal-Green, not neon */
+  
+  --card-bg: rgba(255, 255, 255, 0.02); /* Premium glass */
+  --border: rgba(204, 167, 133, 0.15); 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  
+  /* Topographical Generative Mesh */
+  background-image: 
+    repeating-radial-gradient(circle at 0% 0%, transparent 0, transparent 60px, rgba(204, 167, 133, 0.03) 60px, rgba(204, 167, 133, 0.03) 61px),
+    repeating-radial-gradient(circle at 100% 100%, transparent 0, transparent 90px, rgba(204, 167, 133, 0.02) 90px, rgba(204, 167, 133, 0.02) 91px),
+    radial-gradient(circle at 50% 50%, rgba(204, 167, 133, 0.06) 0%, transparent 70%);
+  background-attachment: fixed; 
+  
+  color: var(--text-main);
+  font-family: 'Montserrat', sans-serif; 
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden; 
+}
+
+/* --- THE WIDE LAYOUT FIX --- */
+.container {
+  max-width: 100%; 
+  margin: 0 auto;
+  padding: 0 1.5rem; 
+}
+
+/* Standardizing vertical section spacing */
+.section-spacer {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.text-accent {
+  color: var(--primary-accent);
+}
+
+/* --- 2. Top Navigation --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  animation: fadeDown 0.8s ease-out;
+}
+
+/* LOGO: Custom Script Font */
+.nav-logo {
+  font-family: 'Madison Sauvage Script', cursive, serif;
+  font-size: 2.8rem; 
+  font-weight: normal;
+  color: var(--primary-accent);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; 
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-accent);
+}
+
+/* --- 3. Hero Section --- */
+.hero-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70vh; 
+  /* UPDATED: Added top padding (3rem) to push the hero section down slightly from the navbar */
+  padding: 3rem 0 3rem; 
+  gap: 3rem; 
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 750px; 
+  animation: fadeUp 0.8s ease-out;
+}
+
+.availability-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(204, 167, 133, 0.3);
+  background: rgba(204, 167, 133, 0.05);
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--primary-accent);
+  text-transform: uppercase;
+  margin-bottom: 2rem; 
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary-accent);
+}
+
+/* NAME: Custom Script Font */
+.hero-left h1 {
+  font-family: 'Madison Sauvage Script', cursive, serif; 
+  font-size: clamp(3.5rem, 7.5vw, 6.5rem); 
+  font-weight: normal;
+  line-height: 0.95; 
+  margin: 0.5rem 0 2.5rem 0; 
+  letter-spacing: 1px;
+}
+
+.tech-subtitle {
+  color: var(--secondary-accent);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  font-size: 1rem; 
+  margin-bottom: 2.5rem; 
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero-bio {
+  color: var(--text-muted);
+  font-size: 1.05rem; 
+  max-width: 550px; 
+  margin-bottom: 3.5rem; 
+  font-weight: 400; 
+  line-height: 2;
+}
+
+.hero-bio strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem; 
+}
+
+.btn-primary {
+  background-color: var(--primary-accent);
+  color: #000;
+  padding: 0.8rem 2.2rem; 
+  font-weight: 600;
+  border: none;
+  border-radius: 40px; 
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(204, 167, 133, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  padding: 0.8rem 2.2rem; 
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+/* HERO RIGHT - WITH AMBIENT GLOW TO FILL SPACE */
+.hero-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeUp 1s ease-out 0.2s backwards;
+  position: relative;
+}
+
+/* Ambient background glow to make the frame look less empty */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(204, 167, 133, 0.06) 0%, transparent 60%);
+  z-index: -1;
+  top: -20%;
+  left: -20%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sih-card {
+  display: block;
+  text-decoration: none;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 400px; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+}
+
+.sih-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(204, 167, 133, 0.4);
+  box-shadow: 0 15px 40px rgba(204, 167, 133, 0.2);
+}
+
+.sih-card::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-accent);
+  border-radius: 50%;
+}
+
+.sih-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--primary-accent);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.sih-card .prize {
+  color: var(--text-main); 
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+
+.sih-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400; 
+  margin-bottom: 1.5rem;
+}
+
+.sih-card-prize-pool {
+  color: var(--success-green);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.2); 
+}
+
+.card-badges {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.card-badge {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- 4. Section Titles & About --- */
+.section-subtitle {
+  color: var(--primary-accent);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-split {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-text-content {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  font-weight: 400; 
+}
+
+.about-text-content strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.philosophy-text {
+  color: var(--secondary-accent);
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+.about-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 🖼️ FRAME 1: THE MUSEUM MATTE (Profile Image) */
+.about-image-container {
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.9));
+  border: 2px solid var(--primary-accent);
+  border-radius: 4px;
+  padding: 1.5rem; 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 450px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px -10px rgba(204, 167, 133, 0.15), inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-image-container img {
+  width: 100%;
+  height: auto; 
+  border-radius: 2px;
+  display: block; 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6); 
+}
+
+/* --- 5. Arsenal / Skills Grid --- */
+.skills-section {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-section::before { content: ''; flex: 1; }
+.skills-section::after { content: ''; flex: 3; }
+
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1.5rem; 
+  margin-bottom: 0; 
+}
+
+.arsenal-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem; 
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.arsenal-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(204, 167, 133, 0.4);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.arsenal-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-accent);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.arsenal-title {
+  color: var(--text-main);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; 
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.arsenal-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem; 
+  font-weight: 400; 
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.progress-track {
+  width: 100%;
+  height: 2px; 
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-accent);
+  border-radius: 2px;
+}
+
+/* --- 6. Projects Section --- */
+.filter-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1.5rem;
+  margin-bottom: 1.5rem; 
+}
+
+.project-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.project-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; 
+  font-weight: 600;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  font-weight: 400; 
+  line-height: 1.6;
+  font-size: 0.9rem; 
+  margin-bottom: 1rem;
+}
+
+.project-prize {
+  color: var(--success-green);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* --- 7. SIH Dedicated Feature Section --- */
+.sih-feature-split {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.sih-gallery {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem; 
+}
+
+/* 🖼️ FRAME 2: THE CYBER-OFFSET (SIH Hackathon Images) */
+.sih-img-placeholder {
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sih-img-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border: 1px solid rgba(204, 167, 133, 0.2);
+  border-left: 2px solid var(--primary-accent);
+  border-bottom: 2px solid var(--primary-accent);
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sih-img-placeholder:hover::before {
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-color: var(--primary-accent);
+  background: rgba(204, 167, 133, 0.05);
+}
+
+.sih-img-placeholder img {
+  width: 100%;
+  height: auto; 
+  border-radius: 2px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease;
+}
+
+.sih-img-placeholder:hover img {
+  transform: translate(-3px, -3px); 
+}
+
+.sih-feature-details {
+  flex: 1;
+}
+
+.sih-national-badge {
+  display: inline-block;
+  color: var(--secondary-accent);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.sih-huge-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-main);
+}
+
+.sih-prize-text {
+  color: var(--text-muted); 
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400; 
+  margin: 0 0 1.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+
+.sih-desc-text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  font-weight: 400; 
+  margin-bottom: 1.5rem;
+}
+
+.sih-desc-text strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.sih-ps-text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 400; 
+  margin-bottom: 2.5rem;
+}
+
+.sih-theme-badges {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sih-bb {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-hover);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-main);
+}
+
+/* --- 8. Unified Full-Width Timeline --- */
+.achievements-section {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.unified-timeline {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--primary-accent); 
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px); 
+  border-color: var(--border-hover);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-date {
+  color: var(--primary-accent);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.25rem 0;
+}
+
+.timeline-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.timeline-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400; 
+  margin: 0;
+}
+
+/* --- 9. Hall of Fame / Gallery Section --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* 🖼️ FRAME 3: THE CINEMATIC SHADOWBOX (Hall of Fame) */
+.gallery-item {
+  background: #050505; 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  padding: 1rem; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0.8rem; right: 0.8rem; bottom: 0.8rem; left: 0.8rem;
+  border: 1px solid rgba(204, 167, 133, 0.3); 
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.5s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(204, 167, 133, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(204, 167, 133, 0.1);
+}
+
+.gallery-item:hover::before {
+  border-color: var(--primary-accent);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto; 
+  border-radius: 0; 
+  display: block;
+  transition: all 0.8s ease;
+  filter: grayscale(25%); 
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); 
+  filter: grayscale(0%); 
+}
+
+/* --- 10. Sleek Contact Section --- */
+.contact-intro {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  font-weight: 400; 
+}
+
+.contact-email-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--primary-accent);
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.contact-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Premium Button Styles */
+.btn-github, .btn-linkedin, .btn-email {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.btn-github:hover, .btn-linkedin:hover, .btn-email:hover {
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+.btn-github svg, .btn-linkedin svg, .btn-email svg {
+  fill: currentColor;
+}
+
+.contact-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+  .hero-split { flex-direction: column; text-align: center; gap: 2rem; }
+  .hero-left h1 { font-size: 4.5rem; }
+  .hero-right { justify-content: center; width: 100%; }
+  
+  .about-split { flex-direction: column; text-align: left; gap: 3rem; }
+  .about-right { width: 100%; justify-content: flex-start; }
+  .about-image-container { max-width: 100%; }
+  
+  .arsenal-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  /* Projects grid stacks to 2 columns on tablets */
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  .sih-feature-split { flex-direction: column-reverse; gap: 3rem; }
+  .sih-gallery { width: 100%; }
+  
+  .skills-section, .achievements-section { 
+    min-height: auto; 
+    padding: 4rem 1.5rem; 
+  } 
+  .skills-section::before, .skills-section::after { display: none; }
+}
+
+@media (max-width: 600px) {
+  .arsenal-grid { grid-template-columns: 1fr; }
+  .timeline-item { padding: 1.5rem; }
+  
+  /* Projects grid stacks to 1 column on phones */
+  .projects-grid { grid-template-columns: 1fr; }
+  
+  .sih-gallery { grid-template-columns: 1fr; } 
+  .contact-email-display { font-size: 1.5rem; }
+}
