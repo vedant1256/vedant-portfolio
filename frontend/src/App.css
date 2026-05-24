@@ -946,3 +946,19 @@ body {
   .sih-gallery { grid-template-columns: 1fr; } 
   .contact-email-display { font-size: 1.5rem; }
 }
+/* 
+  Add this to the bottom of your CSS file. 
+  It ONLY affects screens 768px or smaller (phones). 
+  PC/Laptop screens ignore this completely.
+*/
+@media screen and (max-width: 768px) {
+  /* Replace '.nav-links' with the actual class name of your navigation container */
+  .nav-links {
+    display: none; 
+  }
+
+  /* Optional: slightly reduce the huge title size for mobile */
+  .main-title {
+    font-size: 3.5rem; 
+  }
+}
